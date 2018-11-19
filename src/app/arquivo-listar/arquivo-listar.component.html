@@ -1,0 +1,35 @@
+<div id="logo-home">
+    <div class="container">
+        <h1 class="page-header">ARQUIVOS</h1>
+        <button routerLink="/arquivo/cadastrar" class="btn btn-primary">Novo Arquivo</button>
+        <table class="table table-striped table-hover" style="margin-top: 20px;">
+            <thead style="background-color: #343a40; color: white;">
+                <tr>
+                    <th width="200">CATEGORIA</th>
+                    <th width="200">USUARIO</th>
+                    <th width="400">DESCRICAO</th>
+                    <th width="200"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let arquivo of arquivos">
+                    <td>{{arquivo.categoria.descricao}}</td>
+                    <td>{{arquivo.usuario.nome}}</td>
+                    <td>{{arquivo.descricao}}</td>
+                    <td>
+                        <button class="btn btn-primary" [routerLink]="['/arquivo', arquivo._id]">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button class="btn btn-danger" (click)="deletar(arquivo._id)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <button style="margin-left: 5px;" routerLink="/home" class="btn btn-danger">Voltar</button>
+</div>

@@ -1,0 +1,37 @@
+<div id="logo-home">
+  <div class="container">
+    <h1 class="page-header">COMENTARIOS</h1>
+    <button routerLink="/comentario/cadastrar" class="btn btn-primary">Novo Comentario</button>
+    <table class="table table-striped table-hover" style="margin-top: 20px;">
+      <thead style="background-color: #343a40; color: white;">
+        <tr>
+          <th width="200">USUARIO</th>
+          <th width="200">ARQUIVO</th>
+          <th width="200">CONTEUDO</th>
+          <th width="200">DATA</th>
+          <th width="200"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comentario of comentarios">
+          <td>{{comentario.usuario.nome}}</td>
+          <td>{{comentario.arquivo.descricao}}</td>
+          <td>{{comentario.conteudo}}</td>
+          <td>{{comentario.data | date: 'dd/MM/yyyy'}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/comentario', comentario._id]">
+              <i class="material-icons">edit</i>
+            </button>
+            <button class="btn btn-danger" (click)="deletar(comentario._id)">
+              <i class="material-icons">delete</i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <button style="margin-left: 5px;" routerLink="/home" class="btn btn-danger">Voltar</button>
+</div>

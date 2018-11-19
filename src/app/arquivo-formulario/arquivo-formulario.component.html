@@ -1,0 +1,26 @@
+<div class="card" style="width: 700px; margin: auto;">
+    <div class="card-body">
+        <form (ngSubmit)="enviar()" #arquivoForm="ngForm">
+            <select class="custom-select" name="usuario" [(ngModel)]="arquivo.usuario" style="margin-top: 15px; width: 250px;">
+                <option value="">Selecione o Usuario</option>
+                <option *ngFor="let usuario of usuarios" [ngValue]="usuario._id">{{ usuario.nome }}</option>
+            </select>
+
+            <select class="custom-select" name="categoria" [(ngModel)]="arquivo.categoria" style="margin-top: 15px; width: 250px; margin-left: 20px;">
+                <option value="">Selecione a Categoria</option>
+                <option *ngFor="let categoria of categorias" [ngValue]="categoria._id">{{ categoria.descricao }}</option>
+            </select>
+
+            <div class="input-group" style="margin-top: 15px;">
+                <span class="input-group-addon" id="basic-addon1">Descrição</span>
+                <input type="text" class="form-control" placeholder="Digite aqui sobre a materia" aria-label="descricao" aria-describedby="basic-addon1" name="descricao"
+                    [(ngModel)]="arquivo.descricao">
+            </div>
+
+            <div style="float: right; padding-top: 10px;">
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <button type="button" routerLink="/arquivos" class="btn btn-danger">Voltar</button>
+            </div>
+        </form>
+    </div>
+</div>

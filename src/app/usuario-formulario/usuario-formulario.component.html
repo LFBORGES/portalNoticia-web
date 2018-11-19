@@ -1,0 +1,34 @@
+<div class="card" style="width: 700px; margin: auto;">
+  <div class="card-body">
+    <form (ngSubmit)="enviar()" #usuarioForm="ngForm">
+      <div class="input-group" style="margin-top: 15px;">
+        <span class="input-group-addon" id="basic-addon1">Nome</span>
+        <input type="text" class="form-control" placeholder="Nome do Usuario" aria-label="nome" aria-describedby="basic-addon1"
+          name="nome" [(ngModel)]="usuario.nome">
+      </div>
+
+      <div class="input-group" style="margin-top: 15px;">
+        <span class="input-group-addon" id="basic-addon1">Email</span>
+        <input type="text" class="form-control" placeholder="usuario@dominio.com" aria-label="email" aria-describedby="basic-addon1"
+          name="email" [(ngModel)]="usuario.email">
+      </div>
+
+      <div class="input-group" style="margin-top: 15px;">
+        <span class="input-group-addon" id="basic-addon1">Login</span>
+        <input type="text" class="form-control" placeholder="Login de acesso" aria-label="login" aria-describedby="basic-addon1"
+          name="login" [(ngModel)]="usuario.login">
+      </div>
+
+      <div class="input-group" style="margin-top: 15px;">
+        <span class="input-group-addon" id="basic-addon1">Senha</span>
+        <input type="password" class="form-control" placeholder="Digite aqui a senha" aria-label="senha" aria-describedby="basic-addon1"
+          name="senha" [(ngModel)]="usuario.senha">
+      </div>
+
+      <div style="float: right; padding-top: 10px;">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="button" routerLink="/usuarios" class="btn btn-danger">Voltar</button>
+      </div>
+    </form>
+  </div>
+</div>

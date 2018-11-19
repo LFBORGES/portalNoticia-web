@@ -1,0 +1,16 @@
+<div class="card" style="width: 700px; margin: auto;">
+  <div class="card-body">
+    <form (ngSubmit)="enviar()" #categoriaForm="ngForm">
+      <div class="input-group" style="margin-top: 15px;">
+        <span class="input-group-addon" id="basic-addon1">Descrição</span>
+        <input type="text" class="form-control" placeholder="Nome da Categoria" aria-label="descricao" aria-describedby="basic-addon1"
+          name="descricao" [(ngModel)]="categoria.descricao">
+      </div>
+
+      <div style="float: right; padding-top: 10px;">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="button" routerLink="/categorias" class="btn btn-danger">Voltar</button>
+      </div>
+    </form>
+  </div>
+</div>
